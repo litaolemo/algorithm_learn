@@ -4,34 +4,36 @@
 
 
 class Solution(object):
+
+    def dfs(self, grid, r, c):
+        grid[r][c] = 0
+        nr, nc = len(grid), len(grid[0])
+        for x, y in [(r - 1, c), (r + 1, c), (r, c - 1), (r, c + 1)]:
+            if 0 <= x < nr and 0 <= y < nc and grid[x][y] == "1":
+                self.dfs(grid, x, y)
+
     def numIslands(self, grid):
         """
-        :type grid: List[List[str]]
-        :rtype: int
-        """
-        count = 0
-        len_list = len(grid[0])
-        extend_row = ["0" for x in range(len_list + 1)]
-        grid.append(extend_row)
-        # print(grid)
-        for row, row_data in enumerate(grid):
-            if row == len_list: break
-            row_data.append("0")
-            print(grid)
-            for line, line_data in enumerate(row_data):
+            :type grid: List[List[str]]
+            :rtype: int
+            """
+        nr = len(grid)
+        if nr == 0:
+            return 0
+        nc = len(grid[0])
 
-                if line_data == "1":
-                    if row_data[line - 1] == "1" or grid[row - 1][line] == "1":
-                        pass
-                    elif row_data[line + 1] == "1":
-                        pass
-                    else:
-                        print(line, line_data, row_data[line - 1], grid[row - 1][line])
-                        count += 1
-            print(count)
-        return count
+        num_islands = 0
+        for r in range(nr):
+            for c in range(nc):
+                if grid[r][c] == "1":
+                    num_islands += 1
+                    self.dfs(grid, r, c)
+
+        # 深度优先
+        return num_islands
 
 
+# https://leetcode-cn.com/problems/number-of-islands/solution/dao-yu-shu-liang-by-leetcode/
 a = [["1", "1", "1"], ["0", "1", "0"], ["1", "1", "1"]]
 b = [["1", "1", "1", "1", "0"], ["1", "1", "0", "1", "0"], ["1", "1", "0", "0", "0"], ["0", "0", "0", "0", "0"]]
 c = [["1"]]
