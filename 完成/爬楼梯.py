@@ -16,3 +16,11 @@ class Solution:
         :rtype: int
         """
         return self.climbStairs(n - 1) + self.climbStairs(n - 2) if n > 2 else n
+
+test = Solution()
+print(test.climbStairs(0))
+print(test.climbStairs(1))
+print(test.climbStairs(2))
+print(test.climbStairs(3))
+print(test.climbStairs(4))
+print(test.climbStairs(5))
