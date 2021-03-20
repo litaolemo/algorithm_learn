@@ -3,6 +3,7 @@
 # @File  : 反转单链表.py
 # @author : litao
 
+
 class Node(object):
     def __init__(self, elem, next_=None):
         self.elem = elem
