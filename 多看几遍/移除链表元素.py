@@ -8,8 +8,6 @@ class ListNode(object):
         self.next = None
 
 class Solution(object):
-
-
     def removeElements(self, head, val):
         """
         :type head: ListNode
