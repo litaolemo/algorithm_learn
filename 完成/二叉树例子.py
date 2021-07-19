@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2021/3/21 21:54
 # @Author  : litao
-
+import redis
 from graphviz import Digraph
 import uuid
 from random import sample
@@ -197,3 +197,7 @@ if __name__ == '__main__':
 
     # 利用Graphviz进行二叉树的可视化
     # tree.print_tree(save_path='E://BTree.gv', label=True)
+    rds = redis.StrictRedis(host='172.18.51.10', port=6379, db=20, decode_responses=True)
+    import pandas as pd
+
+    rds.hgetall()
