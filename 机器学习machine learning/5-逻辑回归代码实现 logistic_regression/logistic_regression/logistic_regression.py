@@ -26,6 +26,7 @@ class LogisticRegression:
 
         num_features = self.data.shape[1]
         num_unique_labels = np.unique(labels).shape[0]
+        # 个个类别概率值
         self.theta = np.zeros((num_unique_labels, num_features))
 
     def train(self, max_iterations=1000):
