@@ -56,7 +56,7 @@ polynomial_degree = 0
 sinusoid_degree = 0  
 normalize_data = True  
 
-# 逻辑回归
+# 逻辑回归Logistic regression
 logistic_regression = LogisticRegression(x_train, y_train, polynomial_degree, sinusoid_degree, normalize_data)
 
 (thetas, costs) = logistic_regression.train(max_iterations)

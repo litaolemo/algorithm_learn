@@ -38,7 +38,7 @@ max_iterations = 100000
 regularization_param = 0  
 polynomial_degree = 5  
 sinusoid_degree = 0  
-# 逻辑回归
+# 逻辑回归Logistic regression
 logistic_regression = LogisticRegression(x_train, y_train, polynomial_degree, sinusoid_degree)
 
 # 训练
